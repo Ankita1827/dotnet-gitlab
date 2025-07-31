@@ -1,0 +1,9 @@
+
+ 
+<b>ID:{{o.id}}</b> <br>
+Name <input type="text" [(ngModel)]="o.customerName">    <br>
+Model <input type="text" [(ngModel)]="o.model"> <br>
+Year <input type="text" [(ngModel)]="o.year"> <br>
+DamageType <input type="text" [(ngModel)]="o.damageType"> <br>        
+            <button class="btn btn-warning" (click)="cancelHandler()">Cancel</button>
+            <button (click)="saveHandler(o.id)" class="btn btn-success">Save</button>

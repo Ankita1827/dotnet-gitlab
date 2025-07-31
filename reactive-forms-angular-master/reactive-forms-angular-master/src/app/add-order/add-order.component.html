@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="orderForm" (ngSubmit)="submitHandler()">
+    Model   <input type="text" name="" id=""  formControlName="model"> <br>
+   @if(orderForm.controls["model"].invalid && orderForm.controls['model'].touched)
+   {
+    <span style="color:red;">Model is required</span>
+    } <br>
+    Year  <input type="text" name="" id="" formControlName="year"> <br>
+    @if(orderForm.controls["year"].invalid && orderForm.controls['year'].touched){
+    <span style="color:red;">Year is required</span>} <br>
+    DamageType   <input type="text" name="" id="" formControlName="damageType"> <br>
+    <input type="submit" value="Add Order" [disabled]="!orderForm.valid">
+    </form>
+</div>

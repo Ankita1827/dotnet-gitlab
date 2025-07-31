@@ -1,0 +1,13 @@
+<h1>Active Orders</h1>
+<div class="view-soldering">
+  
+    @for(o of orderdata; track o){
+        <div class="order-list">
+            <h2>Order ID: {{o.orderId}}</h2>
+            <p>Start Date: {{o.startDate | date:'short'}}</p>
+            <p>End Date: {{o.endDate | date:'short'}}</p>
+            <p>Employee ID: {{o.empId}}</p>
+            <button (click)="startSoldering()">Start</button>
+        </div>           
+    }
+</div>  

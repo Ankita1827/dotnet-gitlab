@@ -1,0 +1,20 @@
+<div style="display: flex;">
+    @for(o of orders;track  o.id){    
+        <div class="order">
+          
+            <b> {{o.id}} </b>
+            <i>{{o.customerName}}</i>
+            <i>{{o.model}}</i>
+            <i>{{o.damageType}}</i>
+            <i>{{o.year}}</i>         
+            <div style="display: flex;justify-content: space-between;">
+                   <button class="btn btn-success" (click)="editHandler(o.id)">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+            </div>            
+        </div>
+    }
+</div>
+<router-outlet>
+
+</router-outlet>
+ 

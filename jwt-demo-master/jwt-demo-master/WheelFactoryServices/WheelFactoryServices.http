@@ -1,0 +1,6 @@
+@WheelFactoryServices_HostAddress = http://localhost:5163
+
+GET {{WheelFactoryServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

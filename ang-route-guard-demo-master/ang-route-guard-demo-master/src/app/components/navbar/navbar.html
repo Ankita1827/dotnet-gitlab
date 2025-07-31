@@ -1,0 +1,27 @@
+<!-- <p>navbar works!</p> -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="/assets/images/logo.png" alt="Venue Booking Logo">
+    </div>
+    <ul>
+        <li>
+            <input type="text" placeholder="Search...">
+        </li>
+        @if(lc.getItem('status')==='notloggedin')
+        {
+        <li><a href="#home" routerLink="./home" (click)="navigateToHome()">Home</a></li>
+        <li><a href="#register" routerLink="./Register" (click)="navigateToRegister()">Register</a></li>
+        <li><a href="#login"routerLink="./Login" (click)="navigateToLogin()">Login</a></li>
+        <li><a href="#about" routerLink="./about" (click)="navigateToAbout()">About</a></li>
+        }
+        @else{      
+        <li>   <a routerLink="./add-venue">Add Venue</a></li>
+        <li><a routerLink="./show-venues">View Venues</a></li>
+        <li><a routerLink="./view-slots">Slots</a></li>
+        <li><a (click)="logouthandler()">Logout</a></li>        
+        }
+    </ul>
+    {{lc.getItem('username')}}
+
+</nav>
+<!-- <app-login></app-login> -->

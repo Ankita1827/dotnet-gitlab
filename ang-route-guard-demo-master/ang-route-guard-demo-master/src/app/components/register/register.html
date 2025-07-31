@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    
+</head>
+<body>
+    <div class="register-container">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join us and book your perfect venue</p>
+        <form action="/register" method="POST" >
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="o.userName" required> 
+            
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="o.email" required>
+            
+            <!-- <label for="role">Register as</label>
+            <select id="role" name="role" [(ngModel)]="o.isOwner" required>
+                <option value="" disabled selected>Select a role</option>
+                <option value="user">User</option>
+                <option value="owner">Owner</option>
+            </select> -->
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="o.password" required>
+            <button type="submit" (click)="saveHandler()">Register</button>
+
+            <p class="login-link">
+                Already have an account? <a routerLink="/login" (click)="navigateToLogin()">Login here</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
+
+ <!-- Sign in as:
+            <input type="text" id="customer" name="customer" placeholder="Customer/Owner" >  -->
+            <!-- <input type="text" id="owner" name="owner">
+             <label class="radio-label">
+                <input type="radio" name="isOwner" value='0'>Customer
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="isOwner" value='1'>Owner
+            </label> [(ngModel)] = "o.isOwner" -->

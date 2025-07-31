@@ -1,0 +1,6 @@
+header{display: flex;
+justify-content: space-between;
+height: 13vh;
+background-color: aquamarine;}
+ul li{display: inline;
+padding: 10px;}

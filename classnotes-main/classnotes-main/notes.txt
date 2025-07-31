@@ -1,0 +1,909 @@
+
+platform dependency ---  apps developed in any machine runs in any target machine irrespective of OS 
+size of the program execeeds memory - is called stack overflow 
+
+single exe  ---   monolithic / single tier
+two tier/ client server - two different exe'sa
+eg:
+ssms(client exe)      ---   SQLSERVER(server exe)
+three tier   -- three exe files make the app working
+n tier --  multiple exe files constitute the entire app
+Dotnet: is the name of the initiative from microsoft to reduce the complexities of n tier application development
+as part of the initiative microsoft developed
+-----------------------------------
+
+    dotnet framework    --  software  (tools and base class library)
+    dotnet languages    ---  c#.net,F#,vb.net, vc++.net 50 +   --   Assembly(.dll,.exe) --   
+    dotnet runtime       ---   CLR   - software
+you can find dotnet framework typically in this location
+c:programgramfiles\framework   ---   
+
+CLS  -   common language specification( dotnet languages follow this )
+CTS --   common typesystem (all languages follow same type system)
+
+ int a; c++   --- 2byte
+int a;  --  java -- 4byte 
+char x;      --   1vyte
+char x;  ---   2byte
+
+(vb.net)dim a as integer;   ---     10110001(msil)    4byte
+
+(c#)int a;                     ---  10110001(msil)     4byte
+
+git --  version control, source code management
+
+c# basics--  object oriented, function oriented(c), procedure oriented(basic)  
+
+RxJava  
+RxJs
+c -- function oriented --  
+  oops, pure oops
+
+c++     ,     c#, java 
+
+   problem --    data   --  variables
+                        process -- functions
+			object  -  class,struct,record
+OOA - object oriented analyses -  collection of related data and function
+Calculator
+class Calculator{
+int num2,num2;     //global
+void add(){  }
+void sub(){}
+void mul(){}
+void div(){}
+} --  encapsulation
+class User{
+int age;char name;
+void accept(){}
+static void main(){
+
+  Calculator  ptr =  new Calculator();  --- 4bytes
+  ptr.add();
+   User u = new User();
+   ptr.num1=99;
+  show():
+  delete ptr;
+}
+static void Show(){}
+}
+
+
+int,float,double,bool,char,long,byte,short,ushort,uint,ulong,sbyte,decimal - values types
+int a=10;
+reference type
+Calculator c;
+   c= new Calculator();
+string, object,
+string s= new string("hello");
+string m = "hello";
+
+visual studio community - ide
+visual studio code - editor
+5 -- top level statements 
+
+RealEstate --   
+
+Property - fields,property,methods,events -- 
+  everything hided 
+Buyer
+Seller
+Transaction
+Appointment
+friendly -
+
+public ,private, protected, internal, protected internal, private protected, file
+
+abstraction -  identify what to be provided to whom (access modifiers)
+int  a;
+float x;
+int *ptr=&x;
+base class reference can store address child class instance
+binding --  associating function calls to the class
+compiler -- static binding
+runtime   -- dynamic binding
+array --  static datastructure
+dynamica & elastic datastructure ---  LinkedList,Stack,Queue,Tree , Graph
+
+
+class Flat{
+ Flat next;
+}
+class FlatList{
+   Flat start=null;
+  
+public void CreateList(Flat f){
+	if(start==null)
+	start = f;
+	else
+	 {  f.next = start
+           start = f;}
+}
+...  System.Collections;
+     List l=new List();
+    l.add(f);
+===============
+1-7-2025
+===============
+dotnet -- it is an initiative from microsoft to solve the difficulties of ntier application development
+  .Net Framework  -  1.0 - 4.8(2019) - application for Windows Platform 
+  .Net Core Framework -2015  -  cross platform  - 2300 times better node 
+  1.2,....3.1(2019),5,6,7,8,9,10 
+
+Dotnet - is an umbrealla
+asp.net,dotnet sdk,xamarin 
+Collections -  homogenous, hetregenous
+Parent class reference variable can store address of child class instance
+sealed class       --
+sealed Functions   ---
+https://gitlab.stackroute.in/stack_csharp_exercises_v6/exercise-product-management-module
+
+
+LINQ -- language integrated query --  to filter object collection
+select * from tablname where conditon  - sql
+ query comprehension syntax:  from <obj> in <collection> where <condition> select <list>
+     from c in items where c.isFiltered=='y'
+      select c;
+ extension method syntax:
+
+ function pointer ->  delegate 
+ f = Display();
+ lambda  ->anonymous function
+ statement lambda - multiple statemnets within bracelet bracket
+ expression lambda - single expression without bracelet
+ interfaces -> for future referencing
+ application exception    --  system excception(divisionbyzero)
+ SOLID -  
+ Single Responsibility
+ OpenClose 
+ LiskovSubstituion
+ InterfaceSegreation
+ dependencyInversion
+ ==============================
+ 2-7-20225
+ ===============
+ using interface for fuutre referencing
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TaskDemo
+{
+    internal class Future
+    {
+        //public void UseNow(Action action) { //functional programming
+        //    action();
+        //    Console.WriteLine(FutureMethod(44,4));
+        //}
+        //public Func<int, int, int> FutureMethod { get; set; } = (a,b) => { return 4; };
+        public void UseNow(IFuture action)
+        { //functional programming
+            action.Action();
+            Console.WriteLine(future2.FutureProcess(44, 4));
+        }
+       public IFuture2 future2 { get; set; }  
+    }
+    interface IFuture { 
+        void Action();
+    }
+    interface IFuture2
+    {
+        int FutureProcess(int a,int b);
+    }
+}
+using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
+
+namespace TaskDemo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+             Future future = new Future();
+            //future.UseNow(() => { Console.WriteLine("my implementation"); });
+            //future.FutureMethod = (a, b) => { return a + b; };
+            future.future2 = new Future2Imp();
+            future.UseNow(new Future1());
+
+        }
+    }
+    class Future2Imp : IFuture2
+    {
+               public int FutureProcess(int a,int b) { return a + b; }
+    }
+    class Future1 : IFuture
+    {
+        public void Action()
+        {
+            Console.WriteLine("action is implemented");
+        }
+    }
+}
+Global Assembly Cache --- location where all packages are registered
+sn - utility to create the key file
+gacutil - to register/unregister packages in gacutil
+eg: gacutil /u D:\Stackroute\ITC\June2025Batch\csharp\TaskDemo\Bank\bin\Debug\net8.0/Bank.dll
+Liskov Substitution:= child class must perform all methods of parent
+InterfaceSegragation:- creae separate interface to hold methods
+dependency Inversion:-
+
+new Notification(new EmailService());
+new Notification(new SmsService());
+Thread - process in execution ->
+System.Threading
+System.Threading.Task;
+alter database itcjune2025 add file(
+name='itcjunedata1',
+filename='d:\\anil\itcjune_1.mdf',
+size=10,
+maxsize=20,
+filegrowth=1
+ )
+
+ alter database itcjune2025 remove file  itcjunedata1
+ create database itcjune2025
+on
+(
+name='itcjunedata',
+filename='d:\\anil\itcjune.mdf',
+size=10,
+maxsize=20,
+filegrowth=1
+)
+log on(
+name='itcjunelog',
+filename='d:\\anil\itcjune.ldf',
+size=8,
+maxsize=10,
+filegrowth=1)
+
+sp_helpdb itcjune2025
+constraints
+--------------
+primary key --- 
+unique
+foreign key
+check
+user defined constraints
+
+creaate a table to store details of employee like code,name,age,pincode
+code is unique and 'C00001'
+age should between 1 and 150
+pincode should begin with 5followed 5 digits  --- check(pincode like '[5][0-9][0-9][0-9][0-9]')
+https://gitlab.stackroute.in/stack_sql_exercises
+
+
+ orderdetails
+ orderid           cfaname           date         grossamount    itemname      qty       price       values
+ 1001            fahadenterpersies    12-2-2023    100000        willls         5        4000         200000
+ 1001            fahadenterpersies     12-22023     100000        scissors       4          33         2222
+ 1001            fahadenterpersies    12-2-2023     10000        goldflake      4         3333      3333
+
+
+redundacy -- normalisation
+normalisation is the process of dividing big table to small tables without losing data
+
+
+orders 
+orderid           cfaname           date         grossamount
+1001            fahadenterpersies    12-2-2023    100000
+1002            srihari distributor  12-3-44      108766
+
+orderitems
+orderid itemname      qty       price       values
+1001      willls         5        4000         200000
+1001    scissors       4          33         2222
+1001     goldflake      4         3333      3333
+1002     wills         4           44        4444444
+1003     wills        10         3 434      3434343 
+
+join --- 
+ select * from orders , orderitems   --  cross join sql server syntax
+ select * from orders cross join orderitems   -- ansi syntax
+
+ orderid        cfaname           date         grossamount    orderid itemname      qty       price       values
+1001            fahadenterpersies    12-2-2023    100000      1001      willls         5      4000         200000
+1001            fahadenterpersies    12-2-2023    100000   1001    scissors       4          33         2222
+.....
+1001            fahadenterpersies    12-2-2023    100000  1002     wills         4           44        4444444
+1002            srihari distributor  12-3-44      108766  1001      willls         5        4000         200000
+cartesian product  
+cross join
+equi joins
+self join
+outer join
+ansi syntax --- sql server syntax
+
+
+gender  varchar(7) check(gender in ('m','f','female','male',M,F))
+
+domian integrity    --  chekc
+entity integrity   --- help us to identify a tupel uniqe   --- primary key, unique
+referential integrity  -- foreign key
+where cfaname ='fahadenterpersies'
+create index cfnaiedex on orders(cfaname)
+
+clusterd index-- this index stores rows directly in the order of primary key column
+
+equi join  -- to join n number tables n-1 join conditon
+
+selef join
+create table employees (code int primary key,
+name varchar(30),
+salary float,
+managerid int references employees(code))
+
+to display employee name along with manager name
+------------------
+select e.code,e.name,e.salary,ee.name as manager from employees e,employees ee
+       where ee.code = e.managerid
+https://gitlab.stackroute.in/stack_csharp_exercises_v6/exercise-product-management-file-io-module 
+
+group by  ---  to create group of records 
+functions ---  single row/ aggregate
+select Gender,maritalstatus,count(*) from HumanResources.Employee  group by cube(Gender,maritalstatus)
+view is a database object stores sql command
+simple views and complex views
+begin
+ Declare @i int =1;
+ while @i<10
+ begin
+   print '5 * '+ convert(varchar,@i) + '=' + convert(varchar,5 * @i)
+   set @i= @i +1
+   end
+end
+alter procedure showtable(@num int)
+as
+begin
+ Declare @i int =1;
+ while @i<10
+ begin
+   print convert(varchar,@num) +' * '+ convert(varchar,@i) + '=' + convert(varchar,@num * @i)
+   set @i= @i +1
+   end
+end
+
+trigger - automatically executing stored procedure without parameters no return values
+
+create trigger <triggername>
+on <object?
+<timing> <operation>
+
+as
+body
+
+eg:
+create trigger deletecart
+on orderitems
+after insert
+=============================
+--procedure to creaate order
+==============================
+alter  procedure createorder(@customerid int)
+as
+begin
+    declare @grossamount float
+    declare @custname varchar(40)
+    declare @orderid int
+    select @orderid=max(orderid)+1 from orders
+
+   -- select @custname from customers where customerid=@customerid
+    set @grossamount = dbo.calcgross(@customerid)
+    insert into orders values(@orderid,@custname,default,@grossamount)
+    insert into orderitems(orderid,itemcode,itemname,price,qty,volume)  select @orderid,itemcode,itemname,price,qty,volume from cart 
+      where customerid=@customerid
+    end;
+ ====================================
+ --trigger to delete from cart against orderitems--trigger
+ ==================================================
+alter trigger deletecart
+on orderitems
+after delete
+as
+ 
+ delete from cart where itemcode in  (select itemcode from inserted)
+ 
+--Functions
+create function calcgross (@customerid int)
+returns float
+as
+begin
+declare @gross float
+    select @gross=sum(value)from cart where customerid=@customerid
+    return @gross
+   end;
+
+   select dbo.calcgross(1)
+
+   --Creating cart table in the structure of orderitems table without data
+      select itemcode,itemname,price,qty,volume,value into cart from orderitems where 1=2
+
+      NO-SQL database --  Non relational databases/ document database/ schemaless 
+      ===================
+      Not only sql -- 
+      MongoDb ,cassandra,Cosmosdb,DynamoDb,
+
+      Collection/Table 
+      Document(keyvalye)/Row
+      gui client  --  cli client
+      compass         mongoshell
+      =================================
+      7-7-2025
+      =================================
+      Visual Basic   - ADO - (Connected, Disconnected)
+      Specification:- rules to develop packages which interact database
+      class for Database Connection 
+      Sqlcommand
+      etc 
+      
+
+      ADO.Net        ---     Activex Data Objects --   library ---provides classes and functions-
+      Oracle       --- OracleConnection- open(),close()   ,SQLCommand -- 
+      microsoft    ---  SqlConnection --  open().close()   - Sqlcommand 
+      BusinessObjects -
+      Postgres   ---   PgSQlConnection -
+      Connected-
+      ========
+       1.establish Connection
+       2.send and execute sql commands
+       3.close the Connection
+       USE [itcjune2025]
+   SqlConnection conn = new SqlConnection();
+   //connstring for sql authentication
+   //conn.ConnectionString="server=localhost;initial catalog=itcjune2025;User Id=sa;password=anil@123,TrustServerCertificate=true"
+//connection string for windows authentication  
+   conn.ConnectionString = "server=localhost;initial catalog=itcjune2025;Integrated Security=true;TrustServerCertificate=true";
+   conn.Open();
+   SqlCommand cmd = new SqlCommand();
+   cmd.Connection = conn;
+   cmd.CommandText = "insert into cart values('103',1,'lays',33,2,'packet',66)";
+   cmd.ExecuteNonQuery();
+   conn.Close();
+   //reading data from table
+  public void ShowCart()
+  {
+      conn.Open();
+      cmd.CommandText = "select * from cart";
+      SqlDataReader rows  = cmd.ExecuteReader();
+      while(rows.Read())
+      Console.WriteLine(rows[0].ToString() + rows[1]+ rows[2].ToString() + rows[3].ToString());
+  }
+  Disconnected Architecture
+   Dataset,DataTable,DataRow,DataColumn
+   SqlDataAdapter
+   SqlConnection
+   SqlCommandBuilder
+ 
+
+Disconnected:
+  Dataset,Datatable,Datrow,Datacolumn --- system.data;
+  SqlDataAdapter  -- microsoft.Data.SqlClient
+  SqlConnection;
+  sqlcommandbuilder;
+  ======================
+  8-7-2025
+  =====================
+  Localisability --  
+  Localisation ----  Show UI according to region and language
+  Swift -
+  Flutter
+  ReactNative -
+  DRY  -- do not repeat yourself
+
+  webapplication --  application deployed on web server
+  web server -   is a machine installed with middleware
+  midlleware - is a software that receive request from web clients and return the response 
+  eg:Nginx,GlassFish, InternetInformationSevices(IIS),tomcat,websphere,weblogic,JBoss,Fusion   etc
+  http://145.56.77.88:5500/amazon/index.hmtl ---  segments  
+  url s can be mapped to shor names called domain name eg: amazon.com
+
+.net Framework              .net Core(current .net 8)
+WebForms   ---  MVC         RazorPages   --  MVC
+
+<html>
+  <head>
+  </head>
+  <body>
+     <form action="login.do">
+        <input type=text> <br>
+        <input type=text><br>
+        <input type=button>
+        </form>
+        </body>
+        </html>
+
+
+Console.WriteLine("dfdf");
+Response.Write("<h1>Lalitha</h1>");  --
+
+class Lalitha_aszpx{
+void Page_load(){
+Reponse.Write("<!DOCTYPE html>");
+
+Reponse.Write("<html xmlns="http://www.w3.org/1999/xhtml">
+Reponse.Write("<head runat="server">
+   Reponse.Write(" <title></title>
+Reponse.Write("</head>
+Reponse.Write("<body>
+    Reponse.Write("<form id="form1" runat="server">
+        Reponse.Write("<div>
+           Response.Write("<h1>Lalitha</h1>");
+        Reponse.Write("</div>
+    Reponse.Write("</form>
+Reponse.Write("</body>
+Reponse.Write("</html>
+}
+}
+
+MVC ---  
+http://localhost:5131/Home/Privacy
+      /Home --- class name  - Controller
+      /Privacy  -- function name ---  action method  ---  normaly return a html page
+      view function will loook for a .cshmtl file in the views/controller folder
+
+
+    API - set of functions 
+
+    --------------------
+    9-7-2025
+    ====================
+MVC WEB API --  Controller 
+Web API  -- --   
+web -- internet  --  cyber   
+http:            Cart/Create  ---
+
+programmed   --- trained  
+REST API  ---  is a special type web api, their client does not send name of the function in request url , and the same is inferenced by http handler based on http request type.
+rest api -  http.. Cart
+
+Entity Framework ---  build on the top of Ado disconnected Architecture -- 
+automatic mapping -   
+inbuilt functions to perfomr CRUD operations
+
+Delegation of Responsibility ---
+
+Migration(Scaffolding)
+code first migration - 
+
+=======================================
+10-7-2025
+=======================================
+
+web api --
+CORBA    --    
+RMI 
+REMOTING
+EJB
+DCOM 
+Web Service
+WEB API
+REST API
+gRPC
+EF --  
+Reflection --- 
+micro services - 
+Polyglot Persistence ---   persisting application in to multile(diff) data stores 
+
+http://173.4.5.6:5566/api/vinay  - route name  (api/Cart)
+
+tools -  nuget package   - swashbuckle 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="callApi()">
+        Call Api
+    </button>
+    <script>
+        function callApi(){
+                fetch("http://localhost:5238/api/vinay")
+                .then((response)=>response.json())
+                .then(data=>{console.log(JSON.stringify(data))})
+        }
+    </script>
+</body>
+</html>
+Eureka,Consul,UDDI etc
+
+Minimal API     --   
+middleware functions -- are function called from web apllication class
+run --- terminal middleware  
+=======================
+11-07-2025
+=======================
+Git Lab Runner
+test and build  deploy ----  stages
+gitlab-ci.yml-  stores details of the stages needed  
+configured stages in the ci file is called pipeline
+jenkinsfile    --- 
+https://gitlab.stackroute.in/stack_dotnetv6_keep/keepnote-step3-boilerplate---
+
+setup project -- 
+virtual machine - virtualisation
+hypervisor  --  virtual box,vmware 
+Type1 --  bare metal 
+Type 2   --- 
+Containerization:-
+==================
+docker --  software to create images of app,distribute  and run images
+html -    is a language create web pages- derived from sgml 
+xml -   used create documents to store data --- share data between applications
+json --  data transferring formats
+System.XML -- api 
+front end applications --- 
+
+html,css,sass,scss,js
+
+html  -- <b> Swetha </B> --- tags used to format data
+        <employee>
+xml   --    <name>Swetha<name/>   --  tags will describe the data
+        </employee>
+
+
+html - 5 ---   introduced new set of tags called semantic elements
+semantic -- meaningfull 
+<embedd>
+</embedd>
+<embedd>
+
+table
+div
+
+
+
+
+crawling --  crawlers  - 
+live server --- nginx
+inline - internal/embedd -- external
+
+layout manager  ---   block layout
+
+content, padding,border,margin
+container --  grid,flex,
+style -  unique style many elements
+unique style uniqe element
+unique style multiple elements
+
+ header{
+    height: 13vh;
+     background-color: aqua;
+     display: flex;
+     justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin:10px;
+    position: fixed;
+    width: 99vw;
+}
+ul li{display: inline;}
+.something{
+    height: 13vh;
+     background-color: aqua;
+     display: flex;
+     justify-content: space-between;
+}
+#heading{
+    height: 13vh;
+     background-color:blue;
+     display: flex;
+     justify-content: space-between;
+     bottom: 0;
+     position: fixed;
+     width: 99vw;
+}
+section{
+    height: 34vh;
+    background-color: brown;
+}
+
+
+https://gitlab.stackroute.in/stack_html_exercises/
+
+docker - app for Containerization and run container images
+====================
+15-7-2025
+====================
+Containerization - tool - docker, Redhat openshift
+html - 
+responsive pages -
+using media query - @media()
+
+css - library  --  collection of css styles stored in a .css 
+960.gs,tailwind,bootstrap -- in built responsiveness
+row class, col class
+www  - 
+web 1.0  ---  static pages with minimal styles -- text content-- lacking interactivity
+web 2.0   ---  interactivity, social web,RIA
+web 3.0   ---   semantic web,
+
+interaction      ----    javascript -- vbscript  -- oscript  -- jscript  -- ecmascript   
+
+
+web api  - using javascript   ---   server side script --  node.js
+embed java script in html pages -  client side script   --- browser
+plain javascript - 
+vannila javascript  -- 
+Jquery-
+ajax-
+java script can be used for making changes to the existing page  ---  dyanamic page
+DOM - manipulation  --  
+
+
+functional programming  --   functions passed params and returns 
+===============================
+16-7-2025
+===============================
+bootstrap - row , container,container-fluid ,col-
+960.gs,tailwind.css
+interactive,dynamic,functional , higher order function
+
+java script  is object based language
+access modifiers - private and public
+functions in javascript is first class Objects
+async Task<IActionResult> Get(){} 
+//asyn programming
+var dishes =['idly','sambar','chutney'];
+function addDish(){
+   return new Promise((res,notdone)=>{  
+   isDone = false;
+   setTimeout(() => {
+        dishes.push('pulissery')
+        isDone=true
+        if(isDone)
+             res('data added suceesfully to array');
+            
+        else
+           notdone('problem in adding data to array');
+    }, 2000);
+   });
+}
+
+ async function callpromise(){
+    await addDish();
+    dishes.forEach((r)=>{console.log(r)})
+}
+callpromise();
+console.log('done') // this will print before all other outputs
+
+
+Azure ---   PaaS,IaaS,SaaS,Serverless
+IaaS- virtual machines
+PaaS - AppService  -- pre configured virtual machines
+SaaS - Power BI
+Serverless -  Function App
+========================================
+17-072025
+========================================
+VenueProvider(Owner) -  registration,validation
+Venue -- add,modify,search ---
+slot  --- slot management - 
+customer --  customer data
+bookings -  bookings data
+Single page application-
+Angular -   single page front end app framework
+Framework :- partial implementation of application
+
+computing power   -- scalability   --  vertical ,horizontal
+container orchestration   ->    kubernetes, service fabric, 
+Asynchronous request ---  fetch --- 
+dotnet new MVC
+ng new WheelFactory 
+Ngnix, apache,angular development server
+selector --  is angular tag which encapsulate other html and selectors
+
+angular unit behind the selector is  ->  component --> javascript
+<swetha>   -- function swetha(){
+    var s = document.getElemenByTagName("swetha");
+    var n = document.getElemenByTagName(input);
+    n.style.backgroundColor= "blue"
+    s.innerHtml = "<input type=text style=background:blue /><br><input type=text>"
+}
+module based -- up ver 16
+stand alone components - from version 17
+typescript ->javascript --
+let v="dfdf" -javascript not types used while declaring variables
+a:number;
+x:string
+x:date;
+t:boolean
+
+angular app is a collection of components
+=============================
+18-7-2025
+=============================
+Power Platform --  PowerApp,PowerPages,PowerAutomate,Power BI
+to add bootstrp to angular project
+1.run npm install bootstrap  - command in the app root
+2.open the angular.json file
+3.add the location of bootsratp.min.css(eg:node_modules/bootstrap/dist/css/bootstrap.min.css) in the styles section
+4.reload the project
+Component: is a partial html of your page
+
+Routing : loading angular component on demand to the place holder is called Routing
+in angular any component which need to loaded dynamically to the screen needs to be applied with a routename
+we can  store routenames of the component  in app.routes.ts  
+then write the routing code in the respective function/component
+ensure that that there is a placeholder for the routed compoent is present in the page
+
+transpilation  --  converting typescript to javascript
+
+component classes,pot classes, module classes etc 
+
+========================
+21--7-2025
+======================
+nodejs, express,mongoose => rest api and web apps 
+builder.build()=>app.run()
+
+HttpClient -- HttpClientModule
+ constructor(private client:HttpClient){}
+ this.client.get,post,put,delete 
+ *ngFor  -- is a structural directive
+ structural   & attribute
+ List<Order>
+
+ resolve('dfdf')
+ fetch(){     return new Promise((res,rej)=>{
+//body
+    res(['dsfd','dfdf]);
+ });
+ }
+ var x = fetch('http://anc/order').then(response=>{response.json()}).then(data=>{console.log(data)})
+ httpclient -returns Observable ( is a kind of Promise)
+ httpClient.get('http://localhost:5126/api/order').subscribe(
+                {
+                        next:(data)=>{console.log(data)},
+                        error:(eror)=>{console.log(error)}
+                })
+ 
+====================
+22-7-2025-
+====================
+
+Services - special classes which can be injected to components using inject method
+RxJs  -- Observable
+Reactive programming: usews publish subscribe mechanism
+BehavioralSubject
+
+JWT 
+encryption :anil --  #$#$EDFDSFDSF 97+8105 
+token will be sent in header
+new OrderService(){id=1,};  -- object initialiser
+23-7-2025
+======================================
+.csv   -- excel  --
+ETL --  Extract,transform,load ---
+bcp - command in s	ql server
+
+SSIS - is a kind of project type available in vs community  - to perform integration
+=======================================
+24-7-2025
+=======================================
+compo- directive
+template driven forms  --  data from form is stored to backend typescript through ngModel directive
+reactive forms -
+Observable  -- follows reactive programming and belongs to rxjs package
+
+
+=================
+28-7-2025
+=================
+Logging:   storing operations details to permanent  storage 
+Serilog : package
+Logger object- provided by HttpHandler -
+Configuration - object will help us to read from configuration file
+Logger -object help us to write to log file
+cross cutting concerns   ---   overlapping requirement
+
+Filters --  are classes that contains cross cutting logic
+
+Filters can be also implemented as Custom Attributes.
+
+

@@ -1,0 +1,8 @@
+{
+	"workflow": "HTMLApp",
+	"scores": {
+    	"htmlhint": 40,
+		"html-exercise": 40,
+    	"csslint": 20
+	}
+}

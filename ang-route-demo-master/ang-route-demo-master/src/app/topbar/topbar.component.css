@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    height: 13vh;
+    background-color: burlywood;
+    justify-content: space-between;
+}
+ul li{
+    display:  inline;
+    padding: 10px;
+    color:white
+    
+}

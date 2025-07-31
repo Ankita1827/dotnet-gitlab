@@ -1,0 +1,15 @@
+.view-soldering {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+.order-list {
+
+  max-height: 400px;
+  overflow-y: auto;
+  border: 3px solid blue;
+  border-radius: 4px;
+  margin-right: 3px;
+}
